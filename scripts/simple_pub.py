@@ -10,6 +10,7 @@ class VelPublisher(object):
 	def __init__(self, serial_port="/dev/ttyUSB0"):
 		self.s = serial.Serial(serial_port, 115200, timeout=1)
 		self.serial_data = 0
+		self.data_converted = 0
 		rospy.init_node('Simple_Vel_Publisher', anonymous = True)
 		self.pub = rospy.Publisher("pioneer_lx/RosAria/cmd_vel",Twist, queue_size = 1 ) #Publicar en el topic	o
 		
