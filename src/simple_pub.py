@@ -11,7 +11,7 @@ class VelPublisher(object):
 		self.s = serial.Serial(serial_port, 115200, timeout=1)
 		self.serial_data = 0
 		rospy.init_node('Simple_Vel_Publisher', anonymous = True)
-		self.pub = rospy.Publisher("/cmd_vel",Twist, queue_size = 1 ) #Publicar en el topic	o
+		self.pub = rospy.Publisher("pioneer_lx/RosAria/cmd_vel",Twist, queue_size = 1 ) #Publicar en el topic	o
 		
 	def read_serial(self):
 		data = chr(1)
